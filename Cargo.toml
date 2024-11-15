@@ -3,4 +3,14 @@ name = "FirstBevyGame"
 version = "0.1.0"
 edition = "2021"
 
+# Enable small optimizations for local code
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies
+[profile.dev.package."*"]
+opt-level = 3
+
 [dependencies]
+bevy = { version = "*", features = ["dynamic_linking"] }
+rand = "0.8.5"
